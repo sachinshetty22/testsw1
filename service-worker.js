@@ -138,7 +138,7 @@ self.addEventListener('fetch', function(event) {
         console.log('Response from network is:', response);
         
         var responseToCache = response.clone();
- console.log('saving Response to caches:', response);
+        console.log('saving Response to caches:', response);
             caches.open(CURRENT_CACHES.prefetch)
               .then(function(cache) {
                  console.log('adding Response to caches:', response);

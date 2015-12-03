@@ -332,7 +332,7 @@
       }
 
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/testsw1/service-worker.js', {scope: './'})
+        navigator.serviceWorker.register('/testsw1/service-worker.js?v1', {scope: './'})
           .then(waitUntilInstalled)
           .then(showFilesList)
           .catch(function(error) {
