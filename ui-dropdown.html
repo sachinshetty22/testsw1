@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="initial-scale=1.0, width=device-width" name="viewport">
-	<title>Material</title>
+	<title>Dropdowns - Material</title>
 
 	<!-- css -->
 	<link href="/testsw1/css/base.min.css" rel="stylesheet">
@@ -12,7 +12,7 @@
 	<!-- css for this project -->
 	<link href="/testsw1/css/project.min.css" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="manifest" href="/testsw1/manifest.json">
+
 	<!-- favicon -->
 	<!-- ... -->
 
@@ -47,7 +47,26 @@
 			</li>
 		</ul>
 		<a class="header-logo margin-left-no" href="index.html">Material</a>
+		<div class="header-affix pull-left" data-offset-top="108" data-spy="affix">
+			<span class="header-text margin-left-no">
+				<i class="icon margin-right">chevron_right</i>Dropdowns
+			</span>
+		</div>
 		<ul class="nav nav-list pull-right">
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown"><span class="icon icon-lg">more_vert</span></a>
+				<ul class="dropdown-menu">
+					<li>
+						<a class="waves-attach" href="javascript:void(0)"><span class="icon margin-right-sm">loop</span>&nbsp;Lorem Ipsum</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="javascript:void(0)"><span class="icon margin-right-sm">replay</span>&nbsp;Consectetur Adipiscing</a>
+					</li>
+					<li>
+						<a class="waves-attach" href="javascript:void(0)"><span class="icon margin-right-sm">shuffle</span>&nbsp;Sed Ornare</a>
+					</li>
+				</ul>
+			</li>
 			<li>
 				<a data-toggle="menu" href="#profile">
 					<span class="access-hide">John Smith</span>
@@ -67,7 +86,7 @@
 					<li>
 						<a class="waves-attach" href="ui-collapse.html">Collapsible Regions</a>
 					</li>
-					<li>
+					<li class="active">
 						<a class="waves-attach" href="ui-dropdown.html">Dropdowns</a>
 					</li>
 					<li>
@@ -165,120 +184,83 @@
 	<div class="content">
 		<div class="content-heading">
 			<div class="container">
-				<div class="row">
-					<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
-						<h1 class="heading">Material</h1>
-					</div>
-				</div>
+				<h1 class="heading">Dropdowns</h1>
 			</div>
 		</div>
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-lg-push-3 col-sm-10 col-sm-push-1">
-					<section class="content-inner">
-						<p>Material is an HTML5 UI design based on Google Material.</p>
-						<blockquote>
-							<p>A visual language for our users that synthesizes the classic principles of good design with the innovation and possibility of technology and science. This is material design.</p>
-							<p><a class="text-break" href="http://www.google.com/design/spec/material-design/introduction.html">http://www.google.com/design/spec/material-design/introduction.html</a></p>
-						</blockquote>
-						<p>Have a play with a <a href="http://daemonite.github.io/material/">working prototype of Material</a>, let us know what you think at the <a href="http://labs.daemon.com.au">Daemon Labs</a> forum.</p>
-						<h2 class="content-sub-heading">Components</h2>
-						<div class="tile-wrap">
-							<a class="tile waves-attach" href="ui-card.html">
-								<div class="tile-inner">
-									<span>Cards</span>
+			<section class="content-inner">
+				<h2 class="content-sub-heading">Basic Dropdown</h2>
+				<div class="card-wrap">
+					<div class="row">
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<div class="card">
+								<div class="card-main">
+									<div class="card-inner">
+										<p class="card-heading">Dropdown!</p>
+										<p>
+											Lorem ipsum dolor sit amet.<br>
+											Consectetur adipiscing elit.
+										</p>
+									</div>
+									<div class="card-action">
+										<ul class="margin-no nav nav-list pull-left">
+											<li class="dropdown">
+												<a class="dropdown-toggle text-default waves-attach" data-toggle="dropdown"><span class="icon">more_vert</span></a>
+												<ul class="dropdown-menu">
+													<li>
+														<a class="waves-attach" href="javascript:void(0)"><span class="icon margin-right-sm">loop</span>&nbsp;Lorem Ipsum</a>
+													</li>
+													<li>
+														<a class="waves-attach" href="javascript:void(0)"><span class="icon margin-right-sm">replay</span>&nbsp;Consectetur Adipiscing</a>
+													</li>
+													<li>
+														<a class="waves-attach" href="javascript:void(0)"><span class="icon margin-right-sm">shuffle</span>&nbsp;Sed Ornare</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										<ul class="margin-no nav nav-list pull-right">
+											<li class="dropdown">
+												<a class="dropdown-toggle text-default waves-attach" data-toggle="dropdown"><span class="icon">more_vert</span></a>
+												<ul class="dropdown-menu">
+													<li>
+														<a class="waves-attach" href="javascript:void(0)"><span class="icon margin-right-sm">loop</span>&nbsp;Lorem Ipsum</a>
+													</li>
+													<li>
+														<a class="waves-attach" href="javascript:void(0)"><span class="icon margin-right-sm">replay</span>&nbsp;Consectetur Adipiscing</a>
+													</li>
+													<li>
+														<a class="waves-attach" href="javascript:void(0)"><span class="icon margin-right-sm">shuffle</span>&nbsp;Sed Ornare</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
 								</div>
-							</a>
-							<a class="tile waves-attach" href="ui-collapse.html">
-								<div class="tile-inner">
-									<span>Collapsible Regions</span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="ui-dropdown.html">
-								<div class="tile-inner">
-									<span>Dropdowns</span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="ui-modal.html">
-								<div class="tile-inner">
-									<span>Modal &amp; Toasts</span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="ui-nav.html">
-								<div class="tile-inner">
-									<span>Navs</span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="ui-progress.html">
-								<div class="tile-inner">
-									<span>Progress Bars</span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="ui-tab.html">
-								<div class="tile-inner">
-									<span>Tabs</span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="ui-tile.html">
-								<div class="tile-inner">
-									<span>Tiles</span>
-								</div>
-							</a>
+							</div>
 						</div>
-						<h2 class="content-sub-heading">Elements</h2>
-						<div class="tile-wrap">
-							<a class="tile waves-attach" href="ui-button.html">
-								<div class="tile-inner">
-									<span>Button</span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="ui-form.html">
-								<div class="tile-inner">
-									<span>Form Elements <small>(basic)</small></span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="ui-form-adv.html">
-								<div class="tile-inner">
-									<span>Form Elements <small>(materialised)</small></span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="ui-icon.html">
-								<div class="tile-inner">
-									<span>Icons</span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="ui-table.html">
-								<div class="tile-inner">
-									<span>Tables</span>
-								</div>
-							</a>
-						</div>
-						<h2 class="content-sub-heading">Sample Pages</h2>
-						<div class="tile-wrap">
-							<a class="tile waves-attach" href="page-login.html">
-								<div class="tile-inner">
-									<span>Login Page</span>
-								</div>
-							</a>
-							<a class="tile waves-attach" href="page-palette.html">
-								<div class="tile-inner">
-									<span>Page Palettes</span>
-								</div>
-							</a>
-						</div>
-					</section>
+					</div>
 				</div>
-			</div>
+				<h2 class="content-sub-heading">Button Dropdown</h2>
+				<div class="dropdown-wrap">
+					<div class="dropdown dropdown-inline">
+						<a class="btn dropdown-toggle-btn waves-attach" data-toggle="dropdown">Button Dropdown<span class="icon margin-left-sm">keyboard_arrow_down</span></a>
+						<ul class="dropdown-menu nav">
+							<li>
+								<a class="waves-attach" href="javascript:void(0)">Lorem Ipsum</a>
+							</li>
+							<li>
+								<a class="waves-attach" href="javascript:void(0)">Consectetur Adipiscing</a>
+							</li>
+							<li>
+								<a class="waves-attach" href="javascript:void(0)">Sed Ornare</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
 		</div>
 	</div>
-	
-	 <div class="output">
-      <div id="status"></div>
-
-      <div id="files" style="display: none">
-              
-      </div>
-    </div>
 	<footer class="footer">
 		<div class="container">
 			<p>Material</p>
@@ -301,52 +283,5 @@
 
 	<!-- js for this project -->
 	<script src="/testsw1/js/project.min.js"></script>
-	
-		 <script>
-      function showFilesList() {
-        document.querySelector('#files').style.display = 'block';
-      }
-
-      // Helper function which returns a promise which resolves once the service worker registration
-      // is past the "installing" state.
-      function waitUntilInstalled(registration) {
-        return new Promise(function(resolve, reject) {
-          if (registration.installing) {
-            // If the current registration represents the "installing" service worker, then wait
-            // until the installation step (during which the resources are pre-fetched) completes
-            // to display the file list.
-            registration.installing.addEventListener('statechange', function(e) {
-              if (e.target.state == 'installed') {
-                resolve();
-              } else if(e.target.state == 'redundant') {
-                reject();
-              }
-            });
-          } else {
-            // Otherwise, if this isn't the "installing" service worker, then installation must have been
-            // completed during a previous visit to this page, and the resources are already pre-fetched.
-            // So we can show the list of files right away.
-            resolve();
-          }
-        });
-      }
-
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/testsw1/service-worker.js', {scope: './'})
-          .then(waitUntilInstalled)
-          .then(showFilesList)
-          .catch(function(error) {
-            // Something went wrong during registration. The service-worker.js file
-            // might be unavailable or contain a syntax error.
-           document.querySelector('#status').textContent = error;
-          });
-      } else {
-        // The current browser doesn't support service workers.
-        var aElement = document.createElement('a');
-        aElement.href = 'http://www.chromium.org/blink/serviceworker/service-worker-faq';
-        aElement.textContent = 'Service workers are not supported in the current browser.';
-        document.querySelector('#status').appendChild(aElement);
-      }
-    </script>
 </body>
 </html>
