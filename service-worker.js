@@ -40,7 +40,8 @@ self.addEventListener('install', function(event) {
     '/testsw1/static/pre_fetched.txt',
     '/testsw1/static/pre_fetched.html',
     // This is an image that will be used in pre_fetched.html
-    'https://www.chromium.org/_/rsrc/1302286216006/config/customLogo.gif'
+    'https://www.chromium.org/_/rsrc/1302286216006/config/customLogo.gif',
+    'https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js'
   ];
 
   // All of these logging statements should be visible via the "Inspect" interface
