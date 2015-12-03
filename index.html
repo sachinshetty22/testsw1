@@ -1,1 +1,41 @@
-My Page
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/index.css" >
+       
+
+    </head>
+    <body>
+        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <p><a href="/hello.html">hello</a></p>
+<script>
+	var registration;
+	if ('serviceWorker' in navigator) {
+ navigator.serviceWorker.register('sw.js')
+    .then(function(r) {
+      registration = r;
+      console.log('registered: ');
+      console.log(registration);
+      
+    })
+    .catch(function(whut) {
+      console.error('uh oh... ');
+      console.error(whut);
+    });
+}
+
+
+  
+
+</script>
+  <script src="/js/jquery-2.1.4.js" ></script>     
+       
+
+      
+    </body>
+</html>
