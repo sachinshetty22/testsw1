@@ -5,7 +5,7 @@
 	<meta content="IE=edge" http-equiv="X-UA-Compatible">
 	<meta content="initial-scale=1.0, width=device-width" name="viewport">
 	<title>Login - Material</title>
-<link rel="manifest" href="/testsw1/manifest.json">
+    <link rel="manifest" href="/testsw1/manifest.json">
 	<!-- css -->
 	<link href="/testsw1/css/base.min.css" rel="stylesheet">
 
@@ -110,6 +110,23 @@
 			</div>
 		</div>
 	</div>
+	   <div class="output">
+      <div id="status"></div>
+
+      <div id="files" style="display: none">
+        <p>
+          Some of the resources below have been pre-fetched, and some haven't. Try disabling your network connection
+          and clicking on all the links. The resources that have been pre-fetched should be served from the Service
+          Worker's cache and display as expected; the resource that hasn't been pre-fetched will be unavailable.
+        </p>
+
+        <ul>
+          <li><a href="/testsw1/static/pre_fetched.txt" target="_blank">pre_fetched.txt</a></li>
+          <li><a href="/testsw1/static/pre_fetched.html" target="_blank">pre_fetched.html</a></li>
+          <li><a href="/testsw1/static/not_pre_fetched.txt" target="_blank">not_pre_fetched.txt</a></li>
+        </ul>
+      </div>
+    </div>
 	<footer class="footer">
 		<div class="container">
 			<p>Material</p>
@@ -122,5 +139,54 @@
 
 	<!-- js for this project -->
 	<script src="/testsw1/js/project.min.js"></script>
+	
+	
+	
+	 <script>
+      function showFilesList() {
+        document.querySelector('#files').style.display = 'block';
+      }
+
+      // Helper function which returns a promise which resolves once the service worker registration
+      // is past the "installing" state.
+      function waitUntilInstalled(registration) {
+        return new Promise(function(resolve, reject) {
+          if (registration.installing) {
+            // If the current registration represents the "installing" service worker, then wait
+            // until the installation step (during which the resources are pre-fetched) completes
+            // to display the file list.
+            registration.installing.addEventListener('statechange', function(e) {
+              if (e.target.state == 'installed') {
+                resolve();
+              } else if(e.target.state == 'redundant') {
+                reject();
+              }
+            });
+          } else {
+            // Otherwise, if this isn't the "installing" service worker, then installation must have been
+            // completed during a previous visit to this page, and the resources are already pre-fetched.
+            // So we can show the list of files right away.
+            resolve();
+          }
+        });
+      }
+
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/testsw1/service-worker.js', {scope: './'})
+          .then(waitUntilInstalled)
+          .then(showFilesList)
+          .catch(function(error) {
+            // Something went wrong during registration. The service-worker.js file
+            // might be unavailable or contain a syntax error.
+           document.querySelector('#status').textContent = error;
+          });
+      } else {
+        // The current browser doesn't support service workers.
+        var aElement = document.createElement('a');
+        aElement.href = 'http://www.chromium.org/blink/serviceworker/service-worker-faq';
+        aElement.textContent = 'Service workers are not supported in the current browser.';
+        document.querySelector('#status').appendChild(aElement);
+      }
+    </script>
 </body>
 </html>
