@@ -28,7 +28,7 @@ importScripts('/testsw1/serviceworker-cache-polyfill.js');
 // cache, then increment the CACHE_VERSION value. It will kick off the service worker update
 // flow and the old cache(s) will be purged as part of the activate event handler when the
 // updated service worker is activated.
-var CACHE_VERSION = 1;
+var CACHE_VERSION = "1.1.1.1.1.1.1.0";
 var CURRENT_CACHES = {
   prefetch: 'prefetch-cache-v' + CACHE_VERSION
 };
@@ -136,6 +136,14 @@ self.addEventListener('fetch', function(event) {
       // have to hardcode 'no-cors' like we do when fetch()ing in the install handler.
       return fetch(event.request).then(function(response) {
         console.log('Response from network is:', response);
+        
+        var responseToCache = response.clone();
+
+            caches.open(CURRENT_CACHES.prefetch)
+              .then(function(cache) {
+                 console.log('adding Response to caches:', response);
+                cache.put(event.request, responseToCache);
+              });
 
         return response;
       }).catch(function(error) {
