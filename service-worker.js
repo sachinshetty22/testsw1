@@ -37,10 +37,11 @@ self.addEventListener('install', function(event) {
   var now = Date.now();
 
   var urlsToPrefetch = [
-    'static/pre_fetched.txt',
-    'static/pre_fetched.html',
+    '/testsw1/static/pre_fetched.txt',
+    '/testsw1/static/pre_fetched.html',
     // This is an image that will be used in pre_fetched.html
-    'https://www.chromium.org/_/rsrc/1302286216006/config/customLogo.gif'
+    'https://www.chromium.org/_/rsrc/1302286216006/config/customLogo.gif',
+    '/testsw1/css/index.css'
   ];
 
   // All of these logging statements should be visible via the "Inspect" interface
